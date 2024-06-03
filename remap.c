@@ -22,12 +22,10 @@
 
 #include <stdio.h>
 #include <string.h>
-
-#ifdef WIN32
-#include <windows.h>
-#else
 #include <stdlib.h>
 #include <unistd.h>
+#ifdef WIN32
+#include <windows.h>
 #endif
 
 /*
