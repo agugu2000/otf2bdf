@@ -1,11 +1,15 @@
-# Unicode Area
+# Some Unicode Area
 32_126：Basic Latin
 169：©
 1042_1103：Cyrillic
 8208_8303：General Punctuation
+9312_9738: Special enclosure symbols for numbering
+8544_8639: Roman numerals or fractions
+11904_12213: CJK Radicals Extension and Kangxi radicals and related glyphs
 12289_12329：CJK Symbols and Punctuation
 12352_12447：Basic Hiragana
 12545_13034：Main Katakana
+13312_19967: CJK Unified Ideographs Extension A
 19968_40959：common Chinese
 65281_65374：Fullwidth Symbols and Punctuation
 
