@@ -21,12 +21,10 @@
  */
 
 #include <stdio.h>
-
-#ifdef WIN32
-#include <windows.h>
-#else
 #include <stdlib.h>
 #include <unistd.h>
+#ifdef WIN32
+#include <windows.h>
 #endif
 
 #include <string.h>
@@ -495,7 +493,7 @@ static void
 print_encoding_table(void)
 {
     int ncmaps, i, j;
-    short pid, eid, lasteid;
+    short pid, eid;
     char *np, *platform, encoding[64];
 
     printf("Encoding tables available in the font:\n\n");
@@ -504,7 +502,7 @@ print_encoding_table(void)
     printf("Default%.*sDefault%.*s(-pid %d -eid %d)\n",
            7, spaces, 7, spaces, DEFAULT_PLATFORM_ID, DEFAULT_ENCODING_ID);
     ncmaps = face->num_charmaps;
-    for (lasteid = -1, i = 0; i < ncmaps; i++) {
+    for (i = -1, i = 0; i < ncmaps; i++) {
         pid = face->charmaps[i]->platform_id;
         eid = face->charmaps[i]->encoding_id;
         platform = platform_name(pid);
@@ -747,8 +745,13 @@ generate_font(FILE *out, char *iname, char *oname)
      * Open a temporary file to store the bitmaps in until the exact number
      * of bitmaps are known.
      */
+	 
     if ((tmpdir = getenv("TMPDIR")) == 0)
-      tmpdir = "/tmp";
+		#ifdef WIN32
+			tmpdir = strcat(getenv("windir") , "\\temp\\");
+		#else
+		tmpdir = "/tmp";
+		#endif
     sprintf(tmpfile, "%s/otf2bdf%ld", tmpdir, (long) getpid());
     if ((tmp = fopen(tmpfile, "w")) == 0) {
         fprintf(stderr, "%s: unable to open temporary file '%s'.\n",
@@ -877,7 +880,10 @@ generate_font(FILE *out, char *iname, char *oname)
         wd = ex - sx;
         ht = ey - sy;
         x_off = sx + face->glyph->bitmap_left;
-        y_off = sy + face->glyph->bitmap_top - face->glyph->bitmap.rows;
+		/*
+		y_off = sy + face->glyph->bitmap_top - face->glyph->bitmap.rows;
+		*/
+        y_off = face->glyph->bitmap_top - ey;
 
         bbx.maxas = MAX(bbx.maxas, ht + y_off);
         bbx.maxds = MAX(bbx.maxds, -y_off);
