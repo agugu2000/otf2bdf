@@ -1,3 +1,4 @@
+# Unicode Area
 32_126：Basic Latin
 169：©
 1042_1103：Cyrillic
