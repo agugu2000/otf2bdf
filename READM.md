@@ -11,7 +11,7 @@
 #####example
 ```otf2bdf.exe -p 12 -r 75 -l '32_126 169 1042_1103 8208_8303 12289_12329 12352_12447 12545_13034 19968_40959 65281_65374' 123.otf -o 123.bdf```
 
-========
+
 
 #
 # Copyright 2008 Department of Mathematical Sciences, New Mexico State University
