@@ -1,21 +1,21 @@
 # Some Unicode Area
-32_126：Basic Latin
-169：©
-1042_1103：Cyrillic
-8208_8303：General Punctuation
-9312_9738: Special enclosure symbols for numbering
-8544_8639: Roman numerals or fractions
-11904_12213: CJK Radicals Extension and Kangxi radicals and related glyphs
-12289_12329：CJK Symbols and Punctuation
-12352_12447：Basic Hiragana
-12545_13034：Main Katakana
-13312_19967: CJK Unified Ideographs Extension A
-19968_40959：common Chinese
+32_126：Basic Latin  
+169：©  
+1042_1103：Cyrillic  
+8208_8303：General Punctuation  
+8544_8639: Roman numerals or fractions  
+9312_9738: Special enclosure symbols for numbering  
+11904_12213: CJK Radicals Extension and Kangxi radicals and related glyphs  
+12289_12329：CJK Symbols and Punctuation  
+12352_12447：Basic Hiragana  
+12545_13034：Main Katakana  
+13312_19967: CJK Unified Ideographs Extension A  
+19968_40959：common Chinese  
 65281_65374：Fullwidth Symbols and Punctuation
 
 # example
 
-```otf2bdf.exe -p 12 -r 75 -l '32_126 169 1042_1103 8208_8303 12289_12329 12352_12447 12545_13034 19968_40959 65281_65374' 123.otf -o 123.bdf```
+```otf2bdf.exe -p 12 -r 75 -l '32_126 169 1042_1103 8208_8303 8544_8639 9312_9738 11904_12213 12289_12329 12352_12447 12545_13034 13312_19967 19968_40959 65281_65374' 123.otf -o 123.bdf```
 
 
 
